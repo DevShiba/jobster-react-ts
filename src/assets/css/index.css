@@ -1,0 +1,110 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@400;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+  /*========== Colors ==========*/
+  --first-color: #02030d;
+  --background-color: #13141e;
+  --second-color: #0468bf;
+  --second-color-alt: #02539b;
+  --white-color: #f9f9f9;
+  --white-color-2: #e4e4e4;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Cabin", sans-serif;
+  --h1-font: "Roboto Condensed", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-fontsize: 0.938rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 400;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*=============== Responsive Typograph ===============*/
+@media screen and (min-width: 1280px) {
+  :root {
+    --biggest-font-size: 3.5rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.5rem;
+    --normal-fontsize: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-fontsize);
+  background-color: var(--background-color);
+  color: var(--white-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--white-color);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1230px;
+  margin-inline: 1.5rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  font-size: var(--h2-font-size);
+  color: var(--second-color);
+}
+
+/*=============== BUTTONS ===============*/
+
+@media (min-width: 1280px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*=============== TOASTIFY ===============*/
+.Toastify__toast {
+  text-transform: capitalize;
+}
+
+/*=============== NAV ===============*/
+.nav-margin {
+  margin: 0 2rem;
+}
