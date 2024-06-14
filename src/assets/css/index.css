@@ -5,12 +5,12 @@
 :root {
   --header-height: 3.5rem;
   /*========== Colors ==========*/
-  --first-color: #02030d;
-  --background-color: #13141e;
-  --second-color: #0468bf;
-  --second-color-alt: #02539b;
+  --first-color: #ff4365;
+  --background-color: #030301;
+  --second-color: #00d9c0;
+  --second-color-alt: #00c5ae;
   --white-color: #f9f9f9;
-  --white-color-2: #e4e4e4;
+  --white-color-2: #fffff3;
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/

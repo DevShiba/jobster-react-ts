@@ -19,7 +19,7 @@ const Navbar = () => {
         </button>
         <div>
           <Logo />
-          <h3 className="logo-text"></h3>
+          <h3 className="logo-text">Dashboard</h3>
         </div>
         <div className="btn-container">
           <button type="button" className="btn">
