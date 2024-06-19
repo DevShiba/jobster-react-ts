@@ -1,37 +1,39 @@
 import { useState } from "react";
-import Wrapper from "../assets/wrappers/RegisterPage"
+import Wrapper from "../assets/wrappers/RegisterPage";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FormRow, Logo } from "../components";
 
-
-
 const initialState = {
   name: "",
   email: "",
   password: "",
   isMember: true,
-}
+};
 
 const Register = () => {
   const [values, setValues] = useState(initialState);
-  const {user, isLoading} = useSelector((state : RootState) => state.user)
-  const dispatch = useDispatch()
+  const { user, isLoading } = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-   const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
+    const target = e.target as HTMLInputElement; 
+    const name = target.name;
+    const value = target.value;
 
-   }
+    setValues({ ...values, [name]: value });
+  };
 
-   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
 
-   }
-
-   const toggleMember = ()=>{
-
-   }
+  const toggleMember = () => {
+    setValues({ ...values, isMember: !values.isMember });
+  };
   return (
     <Wrapper className="container">
       <form className="form" onSubmit={onSubmit}>
@@ -86,6 +88,6 @@ const Register = () => {
       </form>
     </Wrapper>
   );
-}
+};
 
-export default Register
+export default Register;

@@ -1,5 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getUserFromLocalStorage } from "../../utils/localStorage";
+import {
+  getUserFromLocalStorage,
+  removeFromLocalStorage,
+} from "../../utils/localStorage";
+import { toast } from "react-toastify";
 
 interface UserState {
   isLoading: boolean;
@@ -20,8 +24,16 @@ const userSlice = createSlice({
     toggleSidebar: (state) => {
       state.isSidebarOpen = !state.isSidebarOpen;
     },
+    logoutUser: (state, { payload }) => {
+      state.user = null;
+      state.isSidebarOpen = false;
+      removeFromLocalStorage();
+      if (payload) {
+        toast.success(payload);
+      }
+    },
   },
 });
 
-export const { toggleSidebar } = userSlice.actions;
+export const { toggleSidebar, logoutUser } = userSlice.actions;
 export default userSlice.reducer;
