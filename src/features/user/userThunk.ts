@@ -3,7 +3,7 @@ import { logoutUser } from "./userSlice";
 
 export const registerUserThunk = async (
   url: string,
-  user: Record<string, any>,
+  user: void,
   thunkAPI: { rejectWithValue: (value: unknown) => void }
 ) => {
   try {
@@ -16,7 +16,7 @@ export const registerUserThunk = async (
 
 export const loginUserThunk = async (
   url: string,
-  user: Record<string, any>,
+  user: void,
   thunkAPI: { rejectWithValue: (value: unknown) => void }
 ) => {
   try {
@@ -29,7 +29,7 @@ export const loginUserThunk = async (
 
 export const updateUserThunk = async (
   url: string,
-  user: Record<string, any>,
+  user: void,
   thunkAPI: { rejectWithValue: (value: unknown) => void }
 ) => {
   try {
